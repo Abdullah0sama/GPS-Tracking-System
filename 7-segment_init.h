@@ -54,3 +54,11 @@ void sevenSegment_init(){
         GPIO_PORTB_DATA_R = ~segments_code[num3];
         delay_sm();
     }
+   void display(int y){
+    int ones = y%10;
+    int tens = (y%100 - ones)/10;
+    int hundreads = (y/100);
+
+
+    display_7segment(hundreads,tens,ones);
+}
