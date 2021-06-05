@@ -1,5 +1,5 @@
 #include "math.h"
-#include "Position"
+#include "GetPosition.h"
 #include "Switch.h"
 #include "LED_init.h"
 
