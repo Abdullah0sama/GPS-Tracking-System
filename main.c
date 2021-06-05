@@ -4,27 +4,26 @@
 void SystemInit(){}
 
 int main(){
-	sevenSegment_init();
-delay();
-delay_sm();
-display_7segment(5,5,5);
-    setupLED();
+  //sevenSegment_init();
+  //delay();
+ // delay_sm();
+ //display(555); 
+	setupLED();
 	turnOnLED();
-    delay_milli(500);
-    LCD_init();
-    delay_milli(500);
+        delay_milli(500);
+        LCD_init();
+        delay_milli(500);
 
-    for(;;)
+for(;;)
   {
-     delay_milli(100);
+     delay_milli(500);
 
-    LCD_Cmd(0x80);
+     LCD_Cmd(0x80);
 
-    delay_milli(500);
-    Lcd_String("GPS TRACKING");
+     delay_milli(500);
+     Lcd_String("GPS TRACKING");
 
-    delay_milli(500);
-
+     delay_milli(500);
 
     LCD_Cmd(0x02);
     delay_milli(100);
