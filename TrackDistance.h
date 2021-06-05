@@ -1,5 +1,8 @@
 #include "math.h"
 #include "Position"
+#include "Switch.h"
+#include "LED_init.h"
+
 #define     PI 3.14159265359
 
 double deg2rad(double deg){
@@ -17,4 +20,26 @@ double distanceBetweenPoints(pos first, pos second){
     double c = 2 * atan2(sqrt(a), sqrt(1 - a));
     double d = radius * c;
     return d;
+}
+
+// Keep tracking distance until switch is pushed 
+// return total distance from moment it is called until the switch is pushed
+double trackDistance(){
+    double totalDistance = 0;
+    pos prev = getPosition();
+
+    while(!isSwitchPushed()){
+
+        //delay for some time 
+        // delay();
+        pos currentPos = getPosition();
+        double distance = distanceBetweenPoints(prev, currentPos);
+        if(distance > 1){
+            prev = currentPos;
+            totalDistance += distance;
+        }
+        // display(distance);
+    }
+    turnOnLED();
+    return totalDistance;
 }
