@@ -16,25 +16,24 @@ display_7segment(5,5,5);
 
     for(;;)
   {
-    delay_milli(100);
+     delay_milli(100);
 
     LCD_Cmd(0x80);
 
     delay_milli(500);
-    LCD_Data('H');
-    LCD_Data('E');
-    LCD_Data('L');
-    LCD_Data('L');
-    LCD_Data('O');
-    LCD_Data(' ');
-    LCD_Data('W');
-    LCD_Data('O');
-    LCD_Data('R');
-    LCD_Data('L');
-    LCD_Data('D');
+    Lcd_String("GPS TRACKING");
 
+    delay_milli(500);
+
+
+    LCD_Cmd(0x02);
     delay_milli(100);
-    delay_milli(500);	
+    LCD_Cmd(0xC0);
+    delay_milli(100);
+
+
+    Lcd_String("Distance=___");
+
   }
 	
 }	
