@@ -3,7 +3,8 @@
 void SystemInit(){}
 
 int main(){
-    LED_init();
+    setupLED();
+	turnOnLED();
     delay_milli(500);
     LCD_init();
     delay_milli(500);
@@ -29,7 +30,7 @@ int main(){
 
     delay_milli(100);
     delay_milli(500);	
-	
+  }
 	
 	
 	
