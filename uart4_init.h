@@ -19,3 +19,9 @@ GPIO_PORTD_DEN_R |= 0xC0;
 GPIO_PORTD_AMSEL_R &=~ 0XC0;       
 
 }
+
+long long UART1_Read(void)
+{
+	while((UART1_FR_R & 0x0010) != 0);
+	return (long long)(UART1_DR_R&0xFF);
+}
