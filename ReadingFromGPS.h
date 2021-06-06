@@ -1,4 +1,4 @@
-char UART1_Read(void)
+char UART2_Read(void)
 {
 	while((UART1_FR_R & 0x0010) != 0);
 	return (UART1_DR_R&0xFF);
