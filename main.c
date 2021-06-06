@@ -1,6 +1,7 @@
 #include "LCD_init.h"
 #include "LED_init.h"
 #include  "7-segment_init.h"
+#include "LCD_init.h"
 void SystemInit(){}
 
 int main(){
