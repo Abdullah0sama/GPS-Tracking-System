@@ -1,10 +1,10 @@
 #include "tm4c123gh6pm.h"
 #include "stdint.h"
 unsigned char segments_code[10] = {0xFC,0x60,0xDA,0xF2,0x66,0xB6,0xBE,0xE0,0xFE,0xF6};
-sevenSegment_init();
-delay();
-delay_sm();
-display_7segment(int num1, int num2, int num3);	
+ void sevenSegment_init();
+void delay();
+void delay_sm();
+void display_7segment(int num1, int num2, int num3);	
 	
 void sevenSegment_init(){
         SYSCTL_RCGC2_R    |= 0x02;
