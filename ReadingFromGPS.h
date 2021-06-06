@@ -3,7 +3,7 @@ char UART1_Read(void)
 	while((UART1_FR_R & 0x0010) != 0);
 	return (UART1_DR_R&0xFF);
 }
-void readThis2(char *y)
+void readThis1(char *y)
 {	
 	char c;
 	char *x;
@@ -23,4 +23,5 @@ void readThis2(char *y)
 			break;
 		}
 	}
+	return (double)(10*y[0] + y[1]);
 }
