@@ -89,7 +89,7 @@ void LCD_Cmd(unsigned char command) {
      delay_micro(50);
 
     }
-	// For Delay
+	
 void Lcd_String(unsigned char* data)
 {
 	int i;
@@ -98,6 +98,7 @@ void Lcd_String(unsigned char* data)
 		Lcd_Data(data[i]);
 	}
 }
+// For Delay
 void delay_milli(int n){
 int i,j;
 for(i=0;i<n;i++){
