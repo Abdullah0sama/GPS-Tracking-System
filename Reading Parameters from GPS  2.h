@@ -4,8 +4,9 @@ char UART1_Read(void)
 	while((UART1_FR_R & 0x0010) != 0);
 	return (UART1_DR_R&0xFF);
 }
-double readThis(char *y)
+double readThis()
 {	
+	char *y;
 	char c;
 	char *x;
   int i=0;
