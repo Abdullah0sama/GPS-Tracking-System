@@ -8,6 +8,7 @@ void LCD_Cmd(unsigned char command);
 void LCD_Data(unsigned char data);
 void LCD_init(void);
 void Lcd_String(unsigned char* data);
+void display_LCD(int y);
 
 #define clear_display     0x01
 #define returnHome        0x02
@@ -98,6 +99,16 @@ void Lcd_String(unsigned char* data)
 		Lcd_Data(data[i]);
 	}
 }
+ void display_LCD(int y){
+         int ones = y%10;
+         int tens = (y%100 - ones)/10;
+         int hundreads = (y/100);
+       unsigned char sad [3];
+             sad[0] = hundreads + '0';
+             sad[1] = tens + '0';
+             sad[2] = ones + '0';
+             Lcd_String(sad);
+ }
 // For Delay
 void delay_milli(int n){
 int i,j;
