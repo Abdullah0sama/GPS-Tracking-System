@@ -16,7 +16,7 @@ pos readThis()
 {	
 	pos currentPos;
 	char x[10];
-	char y[7];
+	char y[200];
 	char z[11];
 	char m[3];
 	double q;
