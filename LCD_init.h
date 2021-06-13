@@ -91,7 +91,7 @@ void LCD_Cmd(unsigned char command) {
 
     }
 	
-void Lcd_String(unsigned char* data)
+void LCD_String(unsigned char* data)
 {
 	int i;
 	for (i = 0; data[i] != 0; i++)
@@ -107,7 +107,8 @@ void Lcd_String(unsigned char* data)
              sad[0] = hundreads + '0';
              sad[1] = tens + '0';
              sad[2] = ones + '0';
-             Lcd_String(sad);
+	     sad[3] = '\0';
+             LCD_String(sad);
  }
 // For Delay
 void delay_milli(int n){
