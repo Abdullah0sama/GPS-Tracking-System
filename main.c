@@ -13,6 +13,7 @@ void setup(){
 
 }
 int main(){
+  UART_Init():	
   setup();
   trackDistance();
   	
