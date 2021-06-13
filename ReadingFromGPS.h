@@ -47,8 +47,8 @@ pos readThis()
 	           v=atof(z);
 			   currentPos.lat = q;
 			   currentPos.lon = v;
+			break;
 		}
-		break;
 	}
 	return currentPos;
 }
