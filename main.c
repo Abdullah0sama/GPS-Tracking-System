@@ -1,10 +1,19 @@
 #include "LCD_init.h"
 #include "LED_init.h"
 #include  "7-segment_init.h"
-#include "GetPosition.h"
+#include "Switch.h"
+#include "TrackDistance.h"
+
 void SystemInit(){}
 
+void setup(){
+  setupLED();
+  setupSwitch();
+
+}
 int main(){
+  setup();
+  trackDistance();
   //sevenSegment_init();
   //delay();
  // delay_sm();
