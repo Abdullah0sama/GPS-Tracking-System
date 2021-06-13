@@ -1,13 +1,20 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
+
+struct position{
+    double lat;
+    double lon;
+};
+
 char UART2_Read(void)
 {
 	while((UART2_FR_R & 0x0010) != 0);
 	return (UART2_DR_R&0xFF);
 }
-void readThis()
+pos readThis()
 {	
+	pos currentPos;
 	char x[10];
 	char y[7];
 	char z[11];
@@ -38,7 +45,10 @@ void readThis()
 			}
 		   q=atof(x);
 	           v=atof(z);
+			   currentPos.lat = q;
+			   currentPos.lon = v;
 		}
 		break;
 	}
+	return currentPos;
 }
