@@ -33,19 +33,23 @@ pos readThis()
 		y[i] = UART2_Read();
 		if(y[i]==',' && y[i-1]=='L' && y[i-2]=='L' && y[i-3]=='G' && y[i-4]=='P' && y[i-5]=='G' && y[i-6]=='$')
 		{
-			for(t=0;t<24;t++)
+			for(t=0;t<500;t++)
 			{
-				if(t>=10 && t<=12)
+				if(t>=0 && t<=9)
+				{
+				  x[t] = UART2_Read();
+				}
+				else if(t>=10 && t<=12)
 				{
 				  m[t-10]= UART2_Read();
 				}
 				else if(t>=13 && t<=23)
 				{
-			          z[i-13]= UART2_Read();
+			          z[t-13]= UART2_Read();
 				}
 				else
 				{
-				  x[i] = UART2_Read();
+				  break;
 				}
 			}
 		   q=atof(x);
