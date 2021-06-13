@@ -25,6 +25,8 @@ pos readThis()
 	int t=0;
 	for(i=0;i<500;i++)
 	{
+		while(i<7)
+		{y[i] = UART2_Read();}
 		y[i] = UART2_Read();
 		if(y[i]==',' && y[i-1]=='L' && y[i-2]=='L' && y[i-3]=='G' && y[i-4]=='P' && y[i-5]=='G' && y[i-6]=='$')
 		{
