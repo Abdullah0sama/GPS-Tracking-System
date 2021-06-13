@@ -1,27 +1,44 @@
+#include <stdint.h>
+#include <string.h>
+#include <stdlib.h>
 char UART2_Read(void)
 {
-	while((UART1_FR_R & 0x0010) != 0);
-	return (UART1_DR_R&0xFF);
+	while((UART2_FR_R & 0x0010) != 0);
+	return (UART2_DR_R&0xFF);
 }
-void readThis1(char *y)
+void readThis()
 {	
-	char c;
-	char *x;
-  int i=0;
+	char x[10];
+	char y[7];
+	char z[11];
+	char m[3];
+	double q;
+	double v;
+        int i=0;
 	int t=0;
 	for(i=0;i<500;i++)
 	{
-		c = UART2_Read();
-		y[i] = c;
-		if(x[i]==',' && x[i-1]=='A' && x[i-2]=='G' && x[i-3]=='G' && x[i-4]=='P' && x[i-5]=='G' && x[i-6]=='$')
+		y[i] = UART2_Read();
+		if(y[i]==',' && y[i-1]=='L' && y[i-2]=='L' && y[i-3]=='G' && y[i-4]=='P' && y[i-5]=='G' && y[i-6]=='$')
 		{
-			for(t=0;t<26;t++)
+			for(t=0;t<24;t++)
 			{
-				c = UART2_Read();
-				if(t==23 || t==24 || t==25){y[t-23]=c;}
+				if(t==10 || t==11 || t==12)
+				{
+				  m[t-10]= UART2_Read();
+				}
+				else if(t==13 || t==14 || t==15||t==16 || t==17 || t==18||t==19 || t==20 || t==21||t==22 || t==23)
+				{
+			          z[i-13]= UART2_Read();
+				}
+				else
+				{
+				  x[i] = UART2_Read();
+				}
 			}
-			break;
+		   q=atof(x);
+	           v=atof(z);
 		}
+		break;
 	}
-	return (double)(10*y[0] + y[1]);
 }
