@@ -6,6 +6,7 @@ struct position{
     double lat;
     double lon;
 };
+typedef struct position pos;
 
 char UART2_Read(void)
 {
