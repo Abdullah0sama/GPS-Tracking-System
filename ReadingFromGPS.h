@@ -15,9 +15,9 @@ char UART2_Read(void)
 pos readThis()
 {	
 	pos currentPos;
-	char x[10];
+	char x[11];
 	char y[200];
-	char z[11];
+	char z[12];
 	char m[3];
 	double q;
 	double v;
@@ -38,6 +38,7 @@ pos readThis()
 				if(t>=0 && t<=9)
 				{
 				  x[t] = UART2_Read();
+				  x[10]='\0';
 				}
 				else if(t>=10 && t<=12)
 				{
@@ -46,6 +47,7 @@ pos readThis()
 				else if(t>=13 && t<=23)
 				{
 			          z[t-13]= UART2_Read();
+				  z[12]='\0';
 				}
 				else
 				{
