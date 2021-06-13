@@ -3,6 +3,7 @@
 #include  "7-segment_init.h"
 #include "Switch.h"
 #include "TrackDistance.h"
+#include "uart4_init"
 
 void SystemInit(){}
 
@@ -14,6 +15,7 @@ void setup(){
 int main(){
   setup();
   trackDistance();
+  	
   //sevenSegment_init();
   //delay();
  // delay_sm();
