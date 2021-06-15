@@ -101,11 +101,10 @@ void LCD_String(unsigned char* data)
 }
  void display_LCD(int y){
 	  LCD_Cmd(0x01);
-	 LCD_Cmd(0x02);
-	 LCD_Cmd(0x08);
-	 LCD_String("Distance=");
 	
-	 
+	 LCD_Cmd(0x80);
+	 delay_milli(500);
+	 LCD_String("Distance : ");
          int ones = y%10;
          int tens = (y%100 - ones)/10;
          int hundreads = (y/100);
@@ -115,6 +114,9 @@ void LCD_String(unsigned char* data)
              sad[2] = ones + '0';
 	     sad[3] = '\0';
              LCD_String(sad);
+	 LCD_DATA('m');
+	 delay_milli(1);
+	 delay_milli(500);
  }
 // For Delay
 void delay_milli(int n){
