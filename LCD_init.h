@@ -100,6 +100,11 @@ void LCD_String(unsigned char* data)
 	}
 }
  void display_LCD(int y){
+	  Lcd_Cmd(0x01);
+	 Lcd_Cmd(0x08);
+	 LCD_String("Distance=");
+	
+	 
          int ones = y%10;
          int tens = (y%100 - ones)/10;
          int hundreads = (y/100);
