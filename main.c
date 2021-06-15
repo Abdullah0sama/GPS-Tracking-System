@@ -20,13 +20,13 @@ int main(){
   delay_milli(500);
   LCD_Cmd(0x80);	
   delay_milli(500);
-  Lcd_String("GPS TRACKING");
+
   delay_milli(500);
   LCD_Cmd(0x02);
   delay_milli(100);
   LCD_Cmd(0xC0);
   delay_milli(100);
-  Lcd_String("Distance=___");	
+  Lcd_String("Distance=");	
   trackDistance();
   	
   //sevenSegment_init();
