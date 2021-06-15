@@ -30,8 +30,8 @@ void display_LCD(int y);
 void LCD_init(void){
  //PORT(A7,A6,A5),PORTB clock
             delay_milli(20);
-            SYSCTL_RCGCGPIO_R |= 0x01;
-            SYSCTL_RCGCGPIO_R |= 0x02;
+            
+            SYSCTL_RCGCGPIO_R |= 0x03;
    while((SYSCTL_RCGCGPIO_R & 0x03) == 0)
             GPIO_PORTA_AFSEL_R = 0x00;
             GPIO_PORTA_AMSEL_R = 0x00;
